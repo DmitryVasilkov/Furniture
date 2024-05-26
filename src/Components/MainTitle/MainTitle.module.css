@@ -1,0 +1,10 @@
+.mainBack{
+    background: url(./mainImage.jpg) no-repeat ;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+
