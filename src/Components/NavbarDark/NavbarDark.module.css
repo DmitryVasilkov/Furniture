@@ -1,0 +1,155 @@
+.nav{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: transparent;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
+.burger_menu {
+    margin: auto 0;
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.line {
+    margin: 5px;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: 0.5s;
+}
+
+.active > .line:nth-child(1) {
+    position: relative;
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+.active > .line:nth-child(2) {
+    position: relative;
+    transform: rotate(315deg);
+}
+
+.active > .line:nth-child(3) {
+    position: relative;
+    top: -10px;
+    transform: rotate(45deg);
+}
+
+
+.navLogo img{
+    height: 48px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.navLogo img:hover{
+    transform: scale(1.1);
+}
+
+.links{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.links ul{
+    display: inline-flex;
+    list-style: none;
+    gap: 30px;
+    
+
+    
+}
+
+.links ul a{
+    text-decoration: none;
+    color: black;
+    font-weight: 1000;
+    font-size: 18px;
+    position: relative;
+}
+
+.links ul a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f3d46d; /* Цвет нижней границы */
+    transition: width .5s; /* Плавный переход */
+    position: absolute;
+    bottom: -2px; /* Позиция нижней границы */
+    left: 0;
+}
+
+.links ul a:hover::after {
+    width: 100%; /* Ширина нижней границы при наведении */
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    height: -2px;
+    background: #f3d46d;
+    transition: width .5s;
+}
+
+.icons img{
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+    cursor: pointer; /* Меняем курсор на указатель */
+}
+
+.icons img:hover{
+    transform: scale(1.3);
+}
+
+.icons ul{
+    display: inline-flex;
+    gap: 30px;
+    list-style: none;
+}
+
+@media (max-width: 768px){
+    .links{
+        display: none;
+    }
+
+    .burger_menu {
+        display: inline;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+    }
+
+    .media_wrapper{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+
+@media (max-width: 480px){
+    .burger_menu {
+        display: none;
+    }
+
+    .navLogo img{
+        height: 32px;
+    }
+
+    .icons ul{
+        gap: 10px;
+    }
+
+    
+}

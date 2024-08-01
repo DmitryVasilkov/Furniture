@@ -1,11 +1,22 @@
 
 import './App.css';
-import Header from './Components/Header/Header';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import CartPage from './Pages/CartPage/CartPage';
+import MainPage from './Pages/MainPage/MainPage';
+import AccountPage from './Pages/AccountPage/AccountPage';
+import AllProductsPage from './Pages/AllProductsPage/AllProductsPage';
+
+
 
 function App() {
   return (
-    <Header/>
-    
+    <>
+    <MainPage/>
+    <AccountPage/>
+    <LoginPage/>
+    <CartPage/>
+    <AllProductsPage/>
+    </>
   );
 }
 

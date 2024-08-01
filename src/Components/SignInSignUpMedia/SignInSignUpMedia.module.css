@@ -1,0 +1,101 @@
+/* Основные стили */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.formContainer {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form h1 {
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #CBB293;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.secondaryButton {
+    background-color: #ddd;
+    color: black;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social {
+    margin: 0 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .formContainer {
+        padding: 20px;
+    }
+
+    .form input {
+        margin: 5px 0;
+    }
+
+    .form button {
+        padding: 8px 16px;
+    }
+
+    .social {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin: 5px;
+    }
+}

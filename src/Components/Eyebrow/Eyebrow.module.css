@@ -1,0 +1,23 @@
+/*Start of the edge */
+
+.dailySales{
+    background: #B47425;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dailySales span{
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+.dailySales p{
+    color: white;
+}
+
+/* End of the edge */

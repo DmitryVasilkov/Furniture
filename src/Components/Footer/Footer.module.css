@@ -1,0 +1,159 @@
+.footer {
+    background-color: #CBB293;
+    color: white;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+  }
+
+/* Start footer content */
+
+.footer ul{
+  list-style: none;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: end;
+  padding-top: 45px;
+}
+
+/* End footer content */
+  
+/* Start footer form */
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7e3cb;
+  padding: 5px;
+}
+
+.emailInput {
+  font-size: 16px;
+  border: none;
+  padding: 7px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  width: 275px;
+  background-color: #f7e3cb;
+  color: black;
+}
+
+.subscribeButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 0 25px 25px 0;
+  color: black;
+}
+
+/* End footer form */
+
+
+/* Start logo & payments */
+
+.logoAndPayments{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.footerLogo{
+  margin: auto 0;
+}
+
+.footerLogo img{
+  height: 48px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.footerLogo img:hover{
+  transform: scale(1.1);
+}
+
+.payments{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payments img{
+  width: 37px;
+}
+
+/* End logo */
+
+@media (max-width: 480px) {
+  .footer {
+      padding: 20px;
+      gap: 50px;
+      padding-bottom: 150px;
+  }
+
+  .footerContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding-top: 20px;
+  }
+
+  .footerContent div {
+      /* width: 100%; */
+      text-align: center;
+  }
+
+  .formContainer {
+      width: 100%;
+  }
+
+  .form {
+      flex-direction: row;
+      align-items: center;
+      margin: auto;
+      width: auto;
+      gap: 0;
+  }
+
+  .emailInput, .subscribeButton {
+      width: auto;
+      border-radius: 25px;
+  }
+
+  .emailInput {
+      border-radius: 25px 0 0 25px;
+  }
+
+  .subscribeButton {
+      border-radius: 0 25px 25px 0;
+  }
+
+  .logoAndPayments {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .payments {
+      justify-content: center;
+  }
+}

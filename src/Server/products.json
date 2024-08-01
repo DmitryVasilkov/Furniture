@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "image": "/images/Chair.png", 
+    "name": "Tort",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Living room",
+    "price": 55
+  },
+  {
+    "id": 2,
+    "name": "Pirog",
+    "description": "Nu ochen vkusniy",
+    "category": "Bedroom",
+    "price": 74
+  },
+  {
+    "id": 3,
+    "name": "Stol",
+    "description": "S 4-mya nogkami",
+    "category": "Dining room",
+    "price": 11
+  },
+  {
+    "id": 4,
+    "name": "Pufic",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Bathroom",
+    "price": 82
+  },
+  {
+    "id": 5,
+    "name": "Kastrulya",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Office",
+    "price": 22
+  },
+  {
+    "id": 6,
+    "name": "Nechto",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Kitchen",
+    "price": 37
+  },
+  {
+    "id": 7,
+    "name": "Mish",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Kids Room",
+    "price": 66
+  },
+  {
+    "id": 8,
+    "name": "Slon",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Hallway",
+    "price": 88
+  },
+  {
+    "id": 9,
+    "name": "Topor",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Storage",
+    "price": 99
+  },
+  {
+    "id": 10,
+    "name": "Katyah",
+    "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
+    "category": "Storage",
+    "price": 11
+  }
+]
