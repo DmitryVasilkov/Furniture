@@ -9,6 +9,8 @@ import s from './Navbar.module.css';
 
 function Navbar() {
 
+  
+
   return (
     <div className={s.nav}>
       <div className={s.navLogo}>
@@ -73,6 +75,8 @@ function Navbar() {
           </li>
         </ul>
       </div>
+
+      
 
     </div>
   );

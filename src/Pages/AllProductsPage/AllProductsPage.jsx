@@ -38,22 +38,22 @@ function AllProductsPage({ productsCount }) {
   };
 
   const fetchProducts = () => {
-    fetch("http://localhost:3000/Server")
+    fetch("http://localhost:3000/server")
       .then(response => {
         if (!response.ok) {
-          throw new Error("fail")
+          throw new Error("Failed to fetch products");
         }
-        return response.json()
+        return response.json();
       })
       .then(data => {
         if (Array.isArray(data)) {
-          setProducts(data)
-        } else{
-          throw new Error("Products is not an array")
+          setProducts(data);
+        } else {
+          throw new Error("Products data is not an array");
         }
       })
-      .catch(error => setError(error))
-  }
+      .catch(error => setError(error));
+  };
 
   const applyFilter = (categories) => {
     setSelectedCategories(categories)
@@ -237,7 +237,7 @@ function AllProductsPage({ productsCount }) {
                   <h3>{product.name}</h3>
                   <h6>{product.description}</h6>
                   <p>{product.price}$</p>
-                  <button>Buy</button>
+                  <button onClick={() => }>Buy</button>
                 </div>
               ))
               ) : <div>No products available</div>

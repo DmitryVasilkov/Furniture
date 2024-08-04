@@ -89,6 +89,10 @@
     list-style: none;
 }
 
+
+
+
+
 @media(max-width: 480px) {
     .links, .icons {
         display: none;

@@ -19,9 +19,20 @@ function NavbarDark() {
 
     const [mobileMenuLinks, setMobileMenuLinks] = useState(false);
 
+    const [isModalOpen, setModalOpen] = useState(false);
+
     const handleBurgerClick = () => {
       setMobileMenuLinks(!mobileMenuLinks);
-    };
+    }
+
+    const openModal = (e) => {
+      e.preventDefault()
+      setModalOpen(true)
+    }
+
+    const closeModal = () => {
+      setModalOpen(false)
+    }
 
 
     return (
@@ -80,7 +91,7 @@ function NavbarDark() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="" onClick={openModal}>
                 <img src={cart} alt="Cart" />
               </a>
             </li>
@@ -91,6 +102,16 @@ function NavbarDark() {
             </li>
           </ul>
         </div>
+
+        {isModalOpen && (
+        <div className={s.modal}>
+          <div className={s.modalContent}>
+            <span className={s.close} onClick={closeModal}>&times;</span>
+            <p>Your cart is empty</p>
+          </div>
+        </div>
+      )}
+
       </div>
       </>
 
