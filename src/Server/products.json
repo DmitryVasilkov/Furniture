@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/Chair.png", 
+    "image": "/images/Chair.png",
     "name": "Tort",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Living room",
@@ -9,6 +9,7 @@
   },
   {
     "id": 2,
+    "image": "/images/Table.png",
     "name": "Pirog",
     "description": "Nu ochen vkusniy",
     "category": "Bedroom",
@@ -16,6 +17,7 @@
   },
   {
     "id": 3,
+    "image": "/images/Chair.png",
     "name": "Stol",
     "description": "S 4-mya nogkami",
     "category": "Dining room",
@@ -23,6 +25,7 @@
   },
   {
     "id": 4,
+    "image": "/images/Table.png",
     "name": "Pufic",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Bathroom",
@@ -30,6 +33,7 @@
   },
   {
     "id": 5,
+    "image": "/images/Chair.png",
     "name": "Kastrulya",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Office",
@@ -37,6 +41,7 @@
   },
   {
     "id": 6,
+    "image": "/images/Table.png",
     "name": "Nechto",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Kitchen",
@@ -44,6 +49,7 @@
   },
   {
     "id": 7,
+    "image": "/images/Table.png",
     "name": "Mish",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Kids Room",
@@ -51,6 +57,7 @@
   },
   {
     "id": 8,
+    "image": "/images/Chair.png",
     "name": "Slon",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Hallway",
@@ -58,6 +65,7 @@
   },
   {
     "id": 9,
+    "image": "/images/Table.png",
     "name": "Topor",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Storage",
@@ -65,6 +73,7 @@
   },
   {
     "id": 10,
+    "image": "/images/Chair.png",
     "name": "Katyah",
     "description": "Tra-ta-ta, Tra-ta-ta. Mi vesem s soboy chut-chut",
     "category": "Storage",

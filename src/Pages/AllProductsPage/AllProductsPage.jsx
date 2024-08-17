@@ -8,6 +8,7 @@ import NavbarDark from '../../Components/NavbarDark/NavbarDark'
 import Eyebrow from '../../Components/Eyebrow/Eyebrow'
 import Footer from '../../Components/Footer/Footer'
 import FilterModal from '../../Components/FilterModal/FilterModal';
+import CartModal from '../../Components/CartModal/CartModal';
 
 
 
@@ -17,6 +18,8 @@ function AllProductsPage({ productsCount }) {
   const [products, setProducts] = useState([])
   const [error, setError] = useState(null)
   const [selectedCategories, setSelectedCategories] = useState([])
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   
 
   const handleFilterClick = () => {
@@ -57,10 +60,10 @@ function AllProductsPage({ productsCount }) {
 
   const applyFilter = (categories) => {
     setSelectedCategories(categories)
-    fetch("http://localhost:3000/Server", {
+    fetch("http://localhost:3000/Server/filter", {
       method:"POST",
       headers: {
-        "Content-Type" : "server/json"
+        "Content-Type" : "application/json"
       },
       body: JSON.stringify({categories})
     })
@@ -73,6 +76,24 @@ function AllProductsPage({ productsCount }) {
     .then(data => setProducts(data))
     .catch(error => setError(error))
   }
+
+  const handleAddToCart = (product) => {
+    const isProductInCart = cartItems.find(item => item.id === product.id);
+    if (isProductInCart) {
+      setCartItems(cartItems.map(item =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ));
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+    setIsCartOpen(true);  
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
 
   useEffect(() => {
     fetchProducts()
@@ -233,11 +254,11 @@ function AllProductsPage({ productsCount }) {
               {Array.isArray(products) && products.length > 0 ? (
                 products.map(product => (
                 <div key={product.id}>
-                  <img style={{ height: "50px", width: "50px" }} src={`http://localhost:3000${product.image}`} alt={product.name} />
+                  <img style={{ height: "150px", width: "150px" }} src={`http://localhost:3000${product.image}`} alt={product.name} />
                   <h3>{product.name}</h3>
                   <h6>{product.description}</h6>
                   <p>{product.price}$</p>
-                  <button onClick={() => }>Buy</button>
+                  <button onClick={() => handleAddToCart(product)}>Buy</button>
                 </div>
               ))
               ) : <div>No products available</div>
@@ -260,6 +281,7 @@ function AllProductsPage({ productsCount }) {
         </div>
       </div>
       <Footer />
+      <CartModal isOpen={isCartOpen} closeCart={closeCart} cartItems={cartItems} />
     </>
 
   )

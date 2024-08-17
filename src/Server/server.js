@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
@@ -10,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const SECRET_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJleHAiOjE3MjA2MzYyMjd9.Ksy9rpGNOZtFjCMu-7HJjUbX8dAp7oNFQ74lyrb56zo";
 
 const corsOptions = {
-    origin: "http://localhost:3001",
+    origin: "*",
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
     optionsSuccessStatus: 200
@@ -41,7 +40,7 @@ const writeUsers = (users) => {
 // Миддлвары
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-app.use("/Server", express.static(path.join(__dirname, "images")));
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 // Роуты
 app.post("/server/register", async (req, res) => {
@@ -79,9 +78,21 @@ app.get("/server", (req, res) => {
     });
 });
 
-app.get("/test-image", (req, res) => {
-    res.sendFile(path.join(__dirname, "images", "Chair.png"));
+app.get("/images/:filename", (req, res) => {
+    const filename = req.params.filename;
+    const filepath = path.join(__dirname, "images", filename)
+    res.set({
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "image/png"
+    })
+    res.sendFile(filepath);
 });
+
+app.use((req,res,next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-Width, Content-Type, Accept")
+    next()
+})
 
 app.post("/server", (req, res) => {
     const newProduct = req.body;
@@ -92,7 +103,7 @@ app.post("/server", (req, res) => {
         } else {
             try {
                 const products = JSON.parse(data);
-                newProduct.id = products.length ? products[products.length - 1].id + 1 : 1;
+                newProduct.id = products.length ? products[products.length - 1].id : 1;
                 products.push(newProduct);
                 fs.writeFile(productsFilePath, JSON.stringify(products, null, 2), err => {
                     if (err) {
