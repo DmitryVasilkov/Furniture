@@ -1,0 +1,105 @@
+{
+    "nav.categories":{
+        "en":"Categories",
+        "ru":"Категории",
+        "de":"Kategorien",
+        "fr":"Catégories"
+    },
+    "nav.hits":{
+        "en":"Hits",
+        "ru":"Хиты",
+        "de":"Hits",
+        "fr":"Hits"
+    },
+    "nav.sales":{
+        "en":"Sales",
+        "ru":"Распродажи",
+        "de":"Ausverkäufe",
+        "fr":"Braderies"
+    },
+    "nav.aboutUs":{
+        "en":"About us",
+        "ru":"О нас",
+        "de":"Über uns",
+        "fr":"À propos de nous"
+    },
+    "nav.contacts":{
+        "en":"Contacts",
+        "ru":"Контакты",
+        "de":"Kontakte",
+        "fr":"Relations"
+    },
+    "header.title":{
+        "en":"Last season discount",
+        "ru":"Последний сезон скидок",
+        "de":"Rabatt für die letzte Saison",
+        "fr":"Rabais de la saison dernière"
+    },
+    "header.button": {
+        "en": "Shop now",
+        "ru": "Купить сейчас",
+        "de": "Jetzt einkaufen",
+        "fr": "Achetez maintenant"
+    },
+    "ourHits.table": {
+        "en": "Table",
+        "ru": "Стол",
+        "de": "Der Tisch",
+        "fr": "Bureau"
+    },
+    "ourHits.table": {
+        "en": "Table",
+        "ru": "Стол",
+        "de": "Der Tisch",
+        "fr": "Bureau"
+    },
+    "ourHits.sofa": {
+        "en": "Sofa",
+        "ru": "Диван",
+        "de": "Das Sofa",
+        "fr": "Canapé"
+    },
+    "ourHits.chair": {
+        "en": "Chair",
+        "ru": "Стул",
+        "de": "Stuhl",
+        "fr": "Chaise"
+    },
+    "ourHits.wordrobe": {
+        "en": "Wordrobe",
+        "ru": "Шкаф",
+        "de": "Schrank",
+        "fr": "Armoire"
+    },
+    "ourHits.coffeTable": {
+        "en": "Coffe Table",
+        "ru": "Кофейный стол",
+        "de": "Kaffeetisch",
+        "fr": "table Basse"
+    },
+    "ourHits.armchair": {
+        "en": "Armchair",
+        "ru": "Кресло",
+        "de": "Sessel",
+        "fr": "Fauteuil"
+    },
+    "ourHits.bed": {
+        "en": "Bed",
+        "ru": "Кровать",
+        "de": "Bett",
+        "fr": "Lit"
+    },
+    "ourHits.puff": {
+        "en": "Puff",
+        "ru": "Пуф",
+        "de": "Hocker",
+        "fr": "Pouf"
+    },
+    "reviews.ourReviews": {
+        "en": "Our reviews",
+        "ru": "Наши отзывы",
+        "de": "Unsere Bewertungen",
+        "fr": "Nos avis"
+    }
+
+}

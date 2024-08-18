@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import s from './Reviews.module.css';
+import text from '../../Server/texts.json'
 
 const reviews = [
   { title: 'vasya', content: 'lorem ipsum', author: 'Jack London' },
@@ -10,6 +11,9 @@ const reviews = [
 ];
 
 function Reviews() {
+
+  const currentLanguage = "ru"
+  const takeText = (key) => text[key][currentLanguage]
   const [currentReview, setCurrentReview] = useState(0);
   const [isManual, setIsManual] = useState(false);
   const intervalRef = useRef(null);
@@ -34,7 +38,7 @@ function Reviews() {
 
   return (
     <div className={s.reviews}>
-      <h2>Our Reviews</h2>
+      <h2>{takeText("reviews.ourReviews")}</h2>
       <div className={s.reviewSlider}>
         {reviews.map((review, index) => (
           <div

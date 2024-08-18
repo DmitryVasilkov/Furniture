@@ -8,6 +8,7 @@ import logout from './icons/Logout.png'
 import navLogo from './icons/Logo_main.png'
 import s from './NavbarDark.module.css'
 import MobileMenuLinks from '../MobileMenu/MobileMenuLinks'
+import text from '../../Server/texts.json'
 
 // const icons = require.context('./icons', true);
 // const images = icons.keys().reduce((acc, path) => {
@@ -16,6 +17,9 @@ import MobileMenuLinks from '../MobileMenu/MobileMenuLinks'
 // }, {});
 
 function NavbarDark() {
+
+    const currentLanguage = "ru"
+    const takeText = (key) => text[key][currentLanguage]
 
     const [mobileMenuLinks, setMobileMenuLinks] = useState(false);
 
@@ -33,6 +37,8 @@ function NavbarDark() {
     const closeModal = () => {
       setModalOpen(false)
     }
+
+    
 
 
     return (
@@ -56,19 +62,19 @@ function NavbarDark() {
         <div className={s.links}>
           <ul>
             <li>
-              <a href="">Categories</a>
+              <a href="">{takeText("nav.categories")}</a>
             </li>
             <li>
-              <a href="">Hits</a>
+              <a href="">{takeText("nav.hits")}</a>
             </li>
             <li>
-              <a href="">Sales</a>
+              <a href="">{takeText("nav.sales")}</a>
             </li>
             <li>
-              <a href="">About us</a>
+              <a href="">{takeText("nav.aboutUs")}</a>
             </li>
             <li>
-              <a href="">Contacts</a>
+              <a href="">{takeText("nav.contacts")}</a>
             </li>
           </ul>
         </div>

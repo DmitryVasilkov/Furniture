@@ -1,40 +1,35 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../Store/Slice/CartSlice';
+import s from './AllProductsPage.module.css'
+import filterIcon from './img/filter-icon.png';
 import chair from './img/Chair.png'
 import table from './img/Table.png'
 import arrow from './img/Arrow.png'
-import filterIcon from './img/filter-icon.png';
-import s from './AllProductsPage.module.css'
 import NavbarDark from '../../Components/NavbarDark/NavbarDark'
 import Eyebrow from '../../Components/Eyebrow/Eyebrow'
 import Footer from '../../Components/Footer/Footer'
 import FilterModal from '../../Components/FilterModal/FilterModal';
 import CartModal from '../../Components/CartModal/CartModal';
 
-
-
 function AllProductsPage({ productsCount }) {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [products, setProducts] = useState([])
-  const [error, setError] = useState(null)
-  const [selectedCategories, setSelectedCategories] = useState([])
-  const [cartItems, setCartItems] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  
+
+  const cartItems = useSelector(state => state.cart.items);
+  const dispatch = useDispatch();
 
   const handleFilterClick = () => {
     setIsModalOpen(true);
   };
 
-  const handleChangeCategory = (category) => {
-    setSelectedCategories((prevCategory) => prevCategory.includes(category) ? prevCategory.filter((cat) => cat !== cat) : [...prevCategory, category] 
-    )
-  }
-
   const handleApplyFilter = () => {
-    applyFilter(selectedCategories)
-    closeModal()
-  }
+    applyFilter(selectedCategories);
+    closeModal();
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -59,7 +54,7 @@ function AllProductsPage({ productsCount }) {
   };
 
   const applyFilter = (categories) => {
-    setSelectedCategories(categories)
+    setSelectedCategories(categories);
     fetch("http://localhost:3000/Server/filter", {
       method:"POST",
       headers: {
@@ -74,20 +69,11 @@ function AllProductsPage({ productsCount }) {
       return response.json()
     })
     .then(data => setProducts(data))
-    .catch(error => setError(error))
-  }
+    .catch(error => setError(error));
+  };
 
   const handleAddToCart = (product) => {
-    const isProductInCart = cartItems.find(item => item.id === product.id);
-    if (isProductInCart) {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-    }
+    dispatch(addToCart(product));
     setIsCartOpen(true);  
   };
 
@@ -96,12 +82,10 @@ function AllProductsPage({ productsCount }) {
   };
 
   useEffect(() => {
-    fetchProducts()
-  }, [])
+    fetchProducts();
+  }, []);
   
-  const array = ["Living Room", "Bedroom", "Dining Room", "Bathroom", "Office", "Kitchen", "Kids Room", "Hallway", "Storage"]
-
-  console.log(array);
+  const array = ["Living Room", "Bedroom", "Dining Room", "Bathroom", "Office", "Kitchen", "Kids Room", "Hallway", "Storage"];
 
   return (
     <>
@@ -129,42 +113,6 @@ function AllProductsPage({ productsCount }) {
           </ul>
           <ul>
             <h3>Product Categories</h3>
-            {/* <li>
-              <input type="checkbox" />
-              <label>Living Room</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Bedroom</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Dining Room</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Bathroom</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Office</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Kitchen</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Kids Room</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Hallway</label>
-            </li>
-            <li>
-              <input type="checkbox" />
-              <label>Storage</label>
-            </li> */}
             {array.map((category) => (
               <li key={category}>
                 <input type="checkbox" checked = {selectedCategories.includes(category)} onChange={() => {
@@ -287,4 +235,4 @@ function AllProductsPage({ productsCount }) {
   )
 }
 
-export default AllProductsPage
+export default AllProductsPage;
